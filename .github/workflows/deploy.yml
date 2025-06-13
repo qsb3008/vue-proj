@@ -11,7 +11,10 @@ jobs:
           password: ${{ secrets.QSB_PWD }}
           script_stop: true
           script: |
+            cd /opt/1panel/apps/openresty/openresty/www/sites/qsb3008.xyz/index
             ls -al
-            touch test.txt
-            echo "hello qsb app" >> test.txt
-            cat test.txt
+            rm -rf vue-proj
+            git clone git@github.com:qsb3008/vue-proj.git -b ${{ github.ref_name }}
+            cd vue-proj
+            npm install
+            npm run build
