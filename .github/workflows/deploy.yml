@@ -1,0 +1,11 @@
+name: Deploy deploy-app
+on: [push]
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.QSB_HOST }}
+          username: ${{ secrets.QSB_USER }}
+          password: ${{ secrets.QSB_PWD }}
