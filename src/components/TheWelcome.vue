@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1 style="color: red">This is an home page</h1>
+    <h2>hellow jenkis!</h2>
   </div>
 </template>
 
